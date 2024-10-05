@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34114.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiCompras", "MiCompras\MiCompras.csproj", "{65B3FBBE-34CA-478D-B56C-3DF874DDC204}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{00FCE276-1872-47B0-9505-FEC3AFC88FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{5E73076B-BA8F-4DF2-B7AA-DA6F76AEE626}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceso", "AccesoDatos\Acceso.csproj", "{5E73076B-BA8F-4DF2-B7AA-DA6F76AEE626}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
