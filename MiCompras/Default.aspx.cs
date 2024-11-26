@@ -31,6 +31,10 @@ namespace MiCompras
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
                 if(txtArticulo.Text != "")
                 {
                     Articulo nuevo = new Articulo();
@@ -130,6 +134,7 @@ namespace MiCompras
 
         protected void btnCalcular_Click(object sender, EventArgs e)
         {
+            
             sumar();
         }
     }

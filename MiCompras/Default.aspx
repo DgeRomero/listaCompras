@@ -9,8 +9,11 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row mt-5 mb-5">
         <div class="col-3">
-            <asp:TextBox CssClass="form-control" ID="txtArticulo" AutoPostBack="true" runat="server" />
-            
+            <asp:TextBox CssClass="form-control" ID="txtArticulo" runat="server" />
+
+            <asp:RequiredFieldValidator ErrorMessage="Debe ingresar artículo" ID="requerido"  ControlToValidate="txtArticulo" CssClass="bg-danger text-bg-danger" runat="server" />
+            <br />
+            <asp:RegularExpressionValidator ErrorMessage="Solo se permiten letras" ValidationExpression="^[A-Za-z ]+$" CssClass="bg-danger text-bg-danger" ControlToValidate="txtArticulo" runat="server" />
         </div>
         <div class="col-3">
             <asp:Button CssClass="btn btn-primary" ID="btnAgregar" Text="Agregar" OnClick="btnAgregar_Click" runat="server" />
@@ -25,7 +28,7 @@
                     OnRowEditing="dvgLista_RowEditing"
                     OnRowCommand="dvgLista_RowCommand"
                     OnRowUpdating="dvgLista_RowUpdating"
-                    OnRowCancelingEdit="dvgLista_RowCancelingEdit">               
+                    OnRowCancelingEdit="dvgLista_RowCancelingEdit">
                     <Columns>
                         <asp:TemplateField HeaderText="Nombre">
                             <ItemTemplate>
@@ -59,7 +62,7 @@
                                 <asp:TextBox ID="txtPrecio" Text='<% #Eval("Precio") %>' TextMode="Number" runat="server" />
                             </EditItemTemplate>
                         </asp:TemplateField>
-                        <asp:CommandField ShowEditButton="true" ShowCancelButton="true" UpdateText="Guardar" ItemStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-success " />
+                        <asp:CommandField ShowEditButton="true" ShowCancelButton="true" UpdateText="Guardar" ItemStyle-CssClass="text-center" CausesValidation="false" ControlStyle-CssClass="btn btn-success " />
                         <asp:ButtonField ButtonType="Button" CommandName="btnEliminar" ItemStyle-CssClass="text-center" ControlStyle-CssClass="btn btn-danger" Text="Eliminar" />
                     </Columns>
 
@@ -68,7 +71,7 @@
         </asp:UpdatePanel>
         <div class="row mt-4">
             <div class="col">
-                <asp:Button Text="Calcular" ID="btnCalcular" CssClass="btn btn-secondary" OnClick="btnCalcular_Click" runat="server" />
+                <asp:Button Text="Calcular" ID="btnCalcular" CssClass="btn btn-secondary" CausesValidation="false" OnClick="btnCalcular_Click" runat="server" />
             </div>
             <div class="col">
                 <asp:Label Text="TOTAL" ID="lblTotal" CssClass=" m5 fa fa-2xl" Visible="false" runat="server" />
